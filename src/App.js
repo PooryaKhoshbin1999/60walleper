@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./components/Header/Header";
+import Content from "./components/content/Content";
+import Footer from "./components/footer/Footer";
+
 
 function App() {
+  const [name , setName] = useState('');
+  const [message , setMessage] = useState(false);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="font-common  bg-bg w-full bg-fixed">
+      <div className=" mx-small md:mx-medium lg:mx-large xl:mx-xlarge">
+        <Header naming={name} setNaming={setName} message={message} setMessage={setMessage} />
+        <Content naming={name} setNaming={setName} message={message} setMessage={setMessage} />
+        <Footer />
+      </div>
     </div>
   );
 }
